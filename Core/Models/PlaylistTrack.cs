@@ -1,5 +1,5 @@
 public class PlaylistTrack
 {
-	public long PlaylistId;
-	public long TrackId;
+	public int PlaylistId { get; set; }
+	public int TrackId { get; set; }
 }

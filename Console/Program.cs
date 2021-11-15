@@ -12,21 +12,32 @@ namespace Chinook.ConsoleApp
         {
 
              var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
-            optionsBuilder.UseSqlite("Data Source=blog.db");
+            optionsBuilder.UseSqlite($"Data Source=c:projects\\app.db");
            using (var db = new AppDbContext(optionsBuilder.Options))
             {
                 // Note: This sample requires the database to be created before running.
                 Console.WriteLine($"Database path: {db.DbPath}.");
                 
                 // Create
-                Console.WriteLine("Inserting a new blog");
+                Console.WriteLine("Inserting a new Customer");
                 db.Add(new Customer { FirstName = "Bob" });
                 db.SaveChanges();
 
                 // Read
-                Console.WriteLine("Querying for a blog");
+                Console.WriteLine("Querying for a Customer");
                 var cust = db.Customers
                     .OrderBy(b => b.CustomerId)
+                    .First();
+
+                                    // Create
+                Console.WriteLine("Inserting a new Album");
+                db.Add(new Album { Title = "Space Adventure" });
+                db.SaveChanges();
+
+                // Read
+                Console.WriteLine("Querying for an Albulm");
+                var album = db.Albums
+                    .OrderBy(b => b.AlbumId)
                     .First();
 
                 // Update
