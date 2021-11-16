@@ -3,14 +3,16 @@ using System;
 using Chinook.Core.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Chinook.Core.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211116072617_Reload")]
+    partial class Reload
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -54,42 +56,55 @@ namespace Chinook.Core.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Address")
-                        .HasColumnType("NVARCHAR(70)");
+                        .HasMaxLength(70)
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("City")
-                        .HasColumnType("NVARCHAR(40)");
+                        .HasMaxLength(40)
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Company")
-                        .HasColumnType("NVARCHAR(80)");
+                        .HasMaxLength(80)
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Country")
-                        .HasColumnType("NVARCHAR(40)");
+                        .HasMaxLength(40)
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR(60)");
+                        .HasMaxLength(60)
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Fax")
-                        .HasColumnType("NVARCHAR(24)");
+                        .HasMaxLength(24)
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR(30)");
+                        .HasMaxLength(40)
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("LastName")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR(20)");
+                        .HasMaxLength(20)
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Phone")
-                        .HasColumnType("NVARCHAR(24)");
+                        .HasMaxLength(24)
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("PostalCode")
-                        .HasColumnType("NVARCHAR(10)");
+                        .HasMaxLength(10)
+                        .HasColumnType("TEXT");
+
+                    b.Property<byte[]>("RowVersion")
+                        .HasColumnType("BLOB");
 
                     b.Property<string>("State")
-                        .HasColumnType("NVARCHAR(40)");
+                        .HasMaxLength(40)
+                        .HasColumnType("TEXT");
 
-                    b.Property<long?>("SupportRepId")
+                    b.Property<long>("SupportRepId")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("CustomerId");

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jobhq94Osm0hZ4q6EuyMMsM0wzaK3+82gplN4zGyB1nfxbMyPxqvRAVM8NxEIDvtK83QJ06D54EhZdretj4amA==",
+  "dgSpecHash": "JvwbL7LQmog9aUXIo0XH8WHrEETw1FZw5fyn2yjQdS/5tscBnjHQOYSWP/zn2vM1Ydv0a806iFaLFA0p2Bsz/w==",
   "success": true,
-  "projectFilePath": "C:\\projects\\chinook\\chinook.api\\chinook.api.csproj",
+  "projectFilePath": "C:\\projects\\Chinook\\api\\chinook.api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\stephen\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\stephen\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

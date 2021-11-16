@@ -3,14 +3,16 @@ using System;
 using Chinook.Core.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Chinook.Core.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211116092154_Reload3")]
+    partial class Reload3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -66,7 +68,6 @@ namespace Chinook.Core.Migrations
                         .HasColumnType("NVARCHAR(40)");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("NVARCHAR(60)");
 
                     b.Property<string>("Fax")
@@ -74,7 +75,8 @@ namespace Chinook.Core.Migrations
 
                     b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR(30)");
+                        .HasMaxLength(30)
+                        .HasColumnType("NVARCHAR");
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -86,10 +88,13 @@ namespace Chinook.Core.Migrations
                     b.Property<string>("PostalCode")
                         .HasColumnType("NVARCHAR(10)");
 
+                    b.Property<byte[]>("RowVersion")
+                        .HasColumnType("BLOB");
+
                     b.Property<string>("State")
                         .HasColumnType("NVARCHAR(40)");
 
-                    b.Property<long?>("SupportRepId")
+                    b.Property<long>("SupportRepId")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("CustomerId");

@@ -1,3 +1,4 @@
+using Chinook.Core.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 
@@ -30,16 +31,9 @@ namespace Chinook.Core.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
-            //enable fluent mapping to our obj to handle concurrency
-            modelBuilder.Entity<PlaylistTrack>(eb =>
-            {
-                eb.HasNoKey();
-                eb.ToTable("PlaylistTracks");
-                eb.Property(plt => plt.PlaylistId).HasColumnName("PlaylistId");
-                eb.Property(plt => plt.TrackId).HasColumnName("TrackId");
-            });
-
+            new CustomerEntityTypeConfig().Configure(modelBuilder.Entity<Customer>());
+            new PlaylistTrackEntityTypeConfig().Configure(modelBuilder.Entity<PlaylistTrack>());
+     
             base.OnModelCreating(modelBuilder);
         }
 

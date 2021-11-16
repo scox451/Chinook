@@ -33,15 +33,7 @@ namespace chinook.api
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "chinook.api", Version = "v1" });
             });
 
-            services.AddEntityFramework()
-                    .AddSqlServer()
-                    .AddDbContext<AppContext>(options =>
-                        options.UseSqlite(Configuration["Data:DefaultConnection:ConnectionString"]));
-
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<AppContext>();
-
-            services.AddScoped<RCustomer>();
+          
 
         }
 

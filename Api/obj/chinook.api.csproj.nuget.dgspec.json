@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\projects\\chinook\\chinook.api\\chinook.api.csproj": {}
+    "C:\\projects\\Chinook\\api\\chinook.api.csproj": {}
   },
   "projects": {
-    "C:\\projects\\chinook\\chinook.api\\chinook.api.csproj": {
+    "C:\\projects\\Chinook\\api\\chinook.api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\projects\\chinook\\chinook.api\\chinook.api.csproj",
+        "projectUniqueName": "C:\\projects\\Chinook\\api\\chinook.api.csproj",
         "projectName": "chinook.api",
-        "projectPath": "C:\\projects\\chinook\\chinook.api\\chinook.api.csproj",
+        "projectPath": "C:\\projects\\Chinook\\api\\chinook.api.csproj",
         "packagesPath": "C:\\Users\\stephen\\.nuget\\packages\\",
-        "outputPath": "C:\\projects\\chinook\\chinook.api\\obj\\",
+        "outputPath": "C:\\projects\\Chinook\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\stephen\\AppData\\Roaming\\NuGet\\NuGet.Config"

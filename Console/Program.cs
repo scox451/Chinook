@@ -2,6 +2,7 @@
 using System.Linq;
 using Chinook.Core;
 using Chinook.Core.Data;
+using Chinook.Core.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Chinook.ConsoleApp
