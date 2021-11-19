@@ -66,3 +66,4 @@ C:\projects\Chinook\api\obj\Debug\net5.0\scopedcss\bundle\chinook.api.styles.css
 C:\projects\Chinook\api\obj\Debug\net5.0\chinook.api.RazorTargetAssemblyInfo.cache
 C:\projects\Chinook\api\obj\Debug\net5.0\chinook.api.csproj.CopyComplete
 C:\projects\Chinook\api\obj\Debug\net5.0\chinook.api.genruntimeconfig.cache
+C:\projects\Chinook\api\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll

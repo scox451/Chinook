@@ -1,8 +1,9 @@
+using System.Reflection;
 using Chinook.Core.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 
-namespace Chinook.Core.Data
+namespace Chinook.Core
 {
     public class AppDbContext : DbContext
     {
@@ -17,38 +18,43 @@ namespace Chinook.Core.Data
         public DbSet<Playlist> Playlist { get; set; }
         public DbSet<PlaylistTrack> PlaylistTrack { get; set; }
         public DbSet<Track> Track { get; set; }
-        
+
         public string DbPath { get; private set; }
 
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
-        {
-            DbPath = $"c:\\projects\\app.db";
-
-        }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
-            => options.UseSqlite($"Data Source={DbPath}");
+         public AppDbContext(DbContextOptions options):base(options)
+         {
+         
+         } //pass in from the factory is needed in future
+    
+        // protected override void OnConfiguring(DbContextOptionsBuilder options)
+        //   => options.UseSqlite($"Filename=c:\\projects\\app.db", 
+        //             options => 
+        //             {
+        //                 options.MigrationsAssembly(Assembly.GetExecutingAssembly().FullName);
+        //             });
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            new AlbumEntityTypeConfig().Configure(modelBuilder.Entity<Album>());
+            new ArtistEntityTypeConfig().Configure(modelBuilder.Entity<Artist>());
             new CustomerEntityTypeConfig().Configure(modelBuilder.Entity<Customer>());
+            new EmployeeEntityTypeConfig().Configure(modelBuilder.Entity<Employee>());
+            new GenreEntityTypeConfig().Configure(modelBuilder.Entity<Genre>());
+            new InvoicesEntityTypeConfig().Configure(modelBuilder.Entity<Invoice>());
+            new InvoiceItemEntityTypeConfig().Configure(modelBuilder.Entity<InvoiceItem>());
+            new MediaTypeEntityTypeConfig().Configure(modelBuilder.Entity<MediaType>());
+            new PlaylistEntityTypeConfig().Configure(modelBuilder.Entity<Playlist>());
             new PlaylistTrackEntityTypeConfig().Configure(modelBuilder.Entity<PlaylistTrack>());
-     
+            new TrackEntityTypeConfig().Configure(modelBuilder.Entity<Track>());
+
             base.OnModelCreating(modelBuilder);
         }
 
 
     }
-    public class AppDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
-    {
-        public AppDbContext CreateDbContext(string[] args)
-        {
-            var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
-            optionsBuilder.UseSqlite("Data Source=blog.db");
 
-            return new AppDbContext(optionsBuilder.Options);
-        }
-    }
+    
+
 }
 
 

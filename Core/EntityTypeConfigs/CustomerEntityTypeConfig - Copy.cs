@@ -6,8 +6,10 @@ public class CustomerEntityTypeConfig : IEntityTypeConfiguration<Customer>
 {
     public void Configure(EntityTypeBuilder<Customer> builder)
     {
+        builder.HasKey(e => e.CustomerId);
+
         builder.Property(e => e.FirstName)
-            .HasColumnType("NVARCHAR(30)")
+            .HasColumnType("NVARCHAR(40)")
             .IsRequired();
         
         builder.Property(e => e.LastName)

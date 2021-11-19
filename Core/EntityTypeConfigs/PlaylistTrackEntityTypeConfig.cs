@@ -6,10 +6,11 @@ public class PlaylistTrackEntityTypeConfig : IEntityTypeConfiguration<PlaylistTr
 {
     public void Configure(EntityTypeBuilder<PlaylistTrack> builder)
     {
-          builder.HasNoKey();
-                builder.ToTable("PlaylistTracks");
-                builder.Property(e => e.PlaylistId).HasColumnName("PlaylistId");
-                builder.Property(e => e.TrackId).HasColumnName("TrackId");
+        builder.HasNoKey();
+        builder.ToTable("PlaylistTracks");
 
+        builder.Property(e => e.PlaylistId).HasColumnName("PlaylistId");
+
+        builder.Property(e => e.TrackId).HasColumnName("TrackId");
     }
 }

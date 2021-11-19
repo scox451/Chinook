@@ -6,12 +6,12 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "Chinook.Console/1.0.0": {
+      "chinook.console/1.0.0": {
         "dependencies": {
           "chinook.core": "1.0.0"
         },
         "runtime": {
-          "Chinook.Console.dll": {}
+          "chinook.console.dll": {}
         }
       },
       "Microsoft.AspNetCore.Cryptography.Internal/5.0.0": {},
@@ -1135,7 +1135,7 @@
     }
   },
   "libraries": {
-    "Chinook.Console/1.0.0": {
+    "chinook.console/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

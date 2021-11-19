@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "c+632q6IhIt6zX6mk/1Dpnyl+jgzyOEF3BPLb6WOnHdKeo1pjOyxUT692c6/CfY+C8Qjm2L3HY0nq0PV2y8sDw==",
+  "dgSpecHash": "e/rLI3xAk27q4ZQ1eFyr+ipAmTp4kMDJwzAVykGJPxtdC5os82DaFU2u8isvd3kxq6HIBO1MnBr9zrTNX7+NeA==",
   "success": true,
-  "projectFilePath": "C:\\projects\\chinook\\console\\Chinook.Console.csproj",
+  "projectFilePath": "C:\\projects\\Chinook\\console\\chinook.console.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\stephen\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.0\\microsoft.aspnetcore.cryptography.internal.5.0.0.nupkg.sha512",
     "C:\\Users\\stephen\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.0\\microsoft.aspnetcore.cryptography.keyderivation.5.0.0.nupkg.sha512",
