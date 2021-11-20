@@ -23,13 +23,12 @@ namespace Chinook.Core
 
         public ChinookContext()
         {
-
+            
         }
-
-        public ChinookContext(DbContextOptions options) : base(options)
-        {
+         public ChinookContext(DbContextOptions options):base(options)
+         {
             //pass in from the factory derived from IDesignTimeDbContextFactory<AppDbContext>
-        }
+         } 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -51,7 +50,7 @@ namespace Chinook.Core
 
     }
 
-
+    
 
 }
 

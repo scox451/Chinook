@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\projects\\Chinook\\core\\chinook.core.csproj": {}
+    "C:\\projects\\Chinook\\core\\Chinook.Core.csproj": {}
   },
   "projects": {
-    "C:\\projects\\Chinook\\core\\chinook.core.csproj": {
+    "C:\\projects\\Chinook\\core\\Chinook.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\projects\\Chinook\\core\\chinook.core.csproj",
-        "projectName": "chinook.core",
-        "projectPath": "C:\\projects\\Chinook\\core\\chinook.core.csproj",
+        "projectUniqueName": "C:\\projects\\Chinook\\core\\Chinook.Core.csproj",
+        "projectName": "Chinook.Core",
+        "projectPath": "C:\\projects\\Chinook\\core\\Chinook.Core.csproj",
         "packagesPath": "C:\\Users\\stephen\\.nuget\\packages\\",
         "outputPath": "C:\\projects\\Chinook\\core\\obj\\",
         "projectStyle": "PackageReference",
