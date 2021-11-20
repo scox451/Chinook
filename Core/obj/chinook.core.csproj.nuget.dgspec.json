@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\projects\\Chinook\\core\\Chinook.Core.csproj": {}
+    "C:\\projects\\Chinook\\core\\chinook.core.csproj": {}
   },
   "projects": {
-    "C:\\projects\\Chinook\\core\\Chinook.Core.csproj": {
+    "C:\\projects\\Chinook\\core\\chinook.core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\projects\\Chinook\\core\\Chinook.Core.csproj",
-        "projectName": "Chinook.Core",
-        "projectPath": "C:\\projects\\Chinook\\core\\Chinook.Core.csproj",
+        "projectUniqueName": "C:\\projects\\Chinook\\core\\chinook.core.csproj",
+        "projectName": "chinook.core",
+        "projectPath": "C:\\projects\\Chinook\\core\\chinook.core.csproj",
         "packagesPath": "C:\\Users\\stephen\\.nuget\\packages\\",
         "outputPath": "C:\\projects\\Chinook\\core\\obj\\",
         "projectStyle": "PackageReference",
@@ -53,10 +53,6 @@
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
-              "target": "Package",
-              "version": "[5.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[5.0.0, )"
             },

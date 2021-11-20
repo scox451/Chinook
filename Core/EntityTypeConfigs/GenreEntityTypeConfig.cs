@@ -6,10 +6,9 @@ public class GenreEntityTypeConfig : IEntityTypeConfiguration<Genre>
 {
     public void Configure(EntityTypeBuilder<Genre> builder)
     {
-        builder.HasKey(e => e.GenreId);
+        builder.ToTable("genres");
 
-        builder.Property(e => e.Name)
-            .HasColumnType("NVARCHAR(120)")
-            .IsRequired();    
+        builder.Property(e => e.Name).HasColumnType("NVARCHAR(120)");
+
     }
 }

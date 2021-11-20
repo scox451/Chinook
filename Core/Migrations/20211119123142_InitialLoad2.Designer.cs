@@ -3,14 +3,16 @@ using System;
 using Chinook.Core;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Chinook.Core.Migrations
 {
     [DbContext(typeof(ChinookContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211119123142_InitialLoad2")]
+    partial class InitialLoad2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -95,7 +97,7 @@ namespace Chinook.Core.Migrations
 
                     b.HasKey("CustomerId");
 
-                    b.ToTable("Customer");
+                    b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("Chinook.Core.Models.Employee", b =>
@@ -151,7 +153,7 @@ namespace Chinook.Core.Migrations
 
                     b.HasKey("EmployeeId");
 
-                    b.ToTable("Employees");
+                    b.ToTable("Employee");
                 });
 
             modelBuilder.Entity("Chinook.Core.Models.Genre", b =>
@@ -199,7 +201,7 @@ namespace Chinook.Core.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("InvoiceDate")
-                        .HasColumnType("DATETIME");
+                        .HasColumnType("TEXT");
 
                     b.Property<decimal>("Total")
                         .HasColumnType("NUMERIC(10,2)");
@@ -310,7 +312,7 @@ namespace Chinook.Core.Migrations
 
                     b.HasIndex("AlbumId");
 
-                    b.ToTable("tracks");
+                    b.ToTable("Tracks");
                 });
 
             modelBuilder.Entity("Chinook.Core.Models.Track", b =>

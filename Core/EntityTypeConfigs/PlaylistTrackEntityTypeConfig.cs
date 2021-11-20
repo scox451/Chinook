@@ -6,11 +6,20 @@ public class PlaylistTrackEntityTypeConfig : IEntityTypeConfiguration<PlaylistTr
 {
     public void Configure(EntityTypeBuilder<PlaylistTrack> builder)
     {
-        builder.HasNoKey();
-        builder.ToTable("PlaylistTracks");
+        builder.HasKey(e => new { e.PlaylistId, e.TrackId });
 
-        builder.Property(e => e.PlaylistId).HasColumnName("PlaylistId");
+        builder.ToTable("playlist_track");
 
-        builder.Property(e => e.TrackId).HasColumnName("TrackId");
+        builder.HasIndex(e => e.TrackId, "IFK_PlaylistTrackTrackId");
+
+        builder.HasOne(d => d.Playlist)
+            .WithMany(p => p.PlaylistTracks)
+            .HasForeignKey(d => d.PlaylistId)
+            .OnDelete(DeleteBehavior.ClientSetNull);
+
+        builder.HasOne(d => d.Track)
+            .WithMany(p => p.PlaylistTracks)
+            .HasForeignKey(d => d.TrackId)
+            .OnDelete(DeleteBehavior.ClientSetNull);
     }
 }

@@ -8,7 +8,7 @@ namespace Chinook.Core.Repos
     public class BaseRepo
     {
         
-        internal AppDbContext Context()
+        internal ChinookContext Context()
          {
             
                  string[] NoArgs = new string[0];

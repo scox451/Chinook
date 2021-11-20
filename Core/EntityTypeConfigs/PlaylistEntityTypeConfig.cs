@@ -6,11 +6,9 @@ public class PlaylistEntityTypeConfig : IEntityTypeConfiguration<Playlist>
 {
     public void Configure(EntityTypeBuilder<Playlist> builder)
     {
-        builder.HasKey(e => e.PlaylistId);
+        builder.ToTable("playlists");
 
-        builder.Property(e => e.Name)
-            .HasColumnType("NVARCHAR(120)")
-            .IsRequired();
+        builder.Property(e => e.Name).HasColumnType("NVARCHAR(120)");
 
     }
 }

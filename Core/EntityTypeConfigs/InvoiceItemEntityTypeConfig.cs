@@ -6,20 +6,27 @@ public class InvoiceItemEntityTypeConfig : IEntityTypeConfiguration<InvoiceItem>
 {
     public void Configure(EntityTypeBuilder<InvoiceItem> builder)
     {
-        builder.HasKey("InvoiceLineItemId","InvoiceId");
-        
-        builder.Property(e => e.InvoiceLineItemId)
-            .HasColumnType("INTEGER");        
-            
-        builder.Property(e => e.TrackId)
-            .HasColumnType("INTEGER");
+        builder.HasKey(e => e.InvoiceLineId);
+
+        builder.ToTable("invoice_items");
+
+        builder.HasIndex(e => e.InvoiceId, "IFK_InvoiceLineInvoiceId");
+
+        builder.HasIndex(e => e.TrackId, "IFK_InvoiceLineTrackId");
 
         builder.Property(e => e.UnitPrice)
+            .IsRequired()
             .HasColumnType("NUMERIC(10,2)");
 
-        builder.Property(e => e.Quantity)
-            .HasColumnType("INTEGER");
+        builder.HasOne(d => d.Invoice)
+            .WithMany(p => p.InvoiceItems)
+            .HasForeignKey(d => d.InvoiceId)
+            .OnDelete(DeleteBehavior.ClientSetNull);
 
+        builder.HasOne(d => d.Track)
+            .WithMany(p => p.InvoiceItems)
+            .HasForeignKey(d => d.TrackId)
+            .OnDelete(DeleteBehavior.ClientSetNull);
 
     }
 }

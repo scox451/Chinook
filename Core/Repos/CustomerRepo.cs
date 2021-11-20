@@ -6,31 +6,31 @@ namespace Chinook.Core.Repos
 {
     public class CustomerRepo : BaseRepo
     {
-        public IEnumerable<Customer> GetCusomers()
-        {
-            using (var context = Context())
-            {
-                var result = context.Customers.ToList();
-                return result;
-            }
-        }
+        // public IEnumerable<Customer> GetCusomers()
+        // {
+        //     using (var context = Context())
+        //     {
+        //         var result = context.Customers.ToList();
+        //         return result;
+        //     }
+        // }
 
-        public long Insert(Customer customer)
-        {
+        // public long Insert(Customer customer)
+        // {
 
-            try
-            {
-                using (var context = Context())
-                {
-                    context.Customers.Add(customer);
-                    context.SaveChanges();
-                    return customer.CustomerId;
-                }
-            }
-            catch
-            {
-                return 0;
-            }
-        }
+        //     try
+        //     {
+        //         using (var context = Context())
+        //         {
+        //             context.Customers.Add(customer);
+        //             context.SaveChanges();
+        //             return customer.CustomerId;
+        //         }
+        //     }
+        //     catch
+        //     {
+        //         return 0;
+        //     }
+        // }
     }
 }

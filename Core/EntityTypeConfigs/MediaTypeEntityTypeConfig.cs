@@ -6,10 +6,8 @@ public class MediaTypeEntityTypeConfig : IEntityTypeConfiguration<MediaType>
 {
     public void Configure(EntityTypeBuilder<MediaType> builder)
     {
-        builder.HasKey(e => e.MediaTypeId);
+        builder.ToTable("media_types");
 
-        builder.Property(e => e.Name)
-            .HasColumnType("NVARCHAR(120)")
-            .IsRequired();
+        builder.Property(e => e.Name).HasColumnType("NVARCHAR(120)");
     }
 }

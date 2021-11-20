@@ -5,33 +5,31 @@ using Microsoft.EntityFrameworkCore.Design;
 
 namespace Chinook.Core
 {
-    public class AppDbContext : DbContext
+    public class ChinookContext : DbContext
     {
         public DbSet<Album> Albums { get; set; }
         public DbSet<Artist> Artists { get; set; }
-        public DbSet<Customer> Customers { get; set; }
-        public DbSet<Employee> Employee { get; set; }
-        public DbSet<Genre> Genre { get; set; }
-        public DbSet<Invoice> Invoice { get; set; }
-        public DbSet<InvoiceItem> InvoiceItem { get; set; }
-        public DbSet<MediaType> MediaType { get; set; }
-        public DbSet<Playlist> Playlist { get; set; }
-        public DbSet<PlaylistTrack> PlaylistTrack { get; set; }
-        public DbSet<Track> Track { get; set; }
+        // public DbSet<Customer> Customers { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Genre> Genres { get; set; }
+        public DbSet<Invoice> Invoices { get; set; }
+        public DbSet<InvoiceItem> Invoice_Items { get; set; }
+        public DbSet<MediaType> Media_Types { get; set; }
+        public DbSet<Playlist> Playlists { get; set; }
+        public DbSet<PlaylistTrack> Playlist_Track { get; set; }
+        public DbSet<Track> tracks { get; set; }
 
         public string DbPath { get; private set; }
 
-         public AppDbContext(DbContextOptions options):base(options)
-         {
-         
-         } //pass in from the factory is needed in future
-    
-        // protected override void OnConfiguring(DbContextOptionsBuilder options)
-        //   => options.UseSqlite($"Filename=c:\\projects\\app.db", 
-        //             options => 
-        //             {
-        //                 options.MigrationsAssembly(Assembly.GetExecutingAssembly().FullName);
-        //             });
+        public ChinookContext()
+        {
+
+        }
+
+        public ChinookContext(DbContextOptions options) : base(options)
+        {
+            //pass in from the factory derived from IDesignTimeDbContextFactory<AppDbContext>
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -53,7 +51,7 @@ namespace Chinook.Core
 
     }
 
-    
+
 
 }
 

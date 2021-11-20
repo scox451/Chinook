@@ -2,31 +2,31 @@ using Microsoft.EntityFrameworkCore;
 using Chinook.Core.Models;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-public class EmployeeEntityTypeConfig : IEntityTypeConfiguration<Employee>
+public class CustomerEntityTypeConfig : IEntityTypeConfiguration<Customer>
 {
-    public void Configure(EntityTypeBuilder<Employee> builder)
+    public void Configure(EntityTypeBuilder<Customer> builder)
     {
-        builder.ToTable("employees");
+        builder.ToTable("customers");
 
-        builder.HasIndex(e => e.ReportsTo, "IFK_EmployeeReportsTo");
+        builder.HasIndex(e => e.SupportRepId, "IFK_CustomerSupportRepId");
 
         builder.Property(e => e.Address).HasColumnType("NVARCHAR(70)");
 
-        builder.Property(e => e.BirthDate).HasColumnType("DATETIME");
-
         builder.Property(e => e.City).HasColumnType("NVARCHAR(40)");
+
+        builder.Property(e => e.Company).HasColumnType("NVARCHAR(80)");
 
         builder.Property(e => e.Country).HasColumnType("NVARCHAR(40)");
 
-        builder.Property(e => e.Email).HasColumnType("NVARCHAR(60)");
+        builder.Property(e => e.Email)
+            .IsRequired()
+            .HasColumnType("NVARCHAR(60)");
 
         builder.Property(e => e.Fax).HasColumnType("NVARCHAR(24)");
 
         builder.Property(e => e.FirstName)
             .IsRequired()
-            .HasColumnType("NVARCHAR(20)");
-
-        builder.Property(e => e.HireDate).HasColumnType("DATETIME");
+            .HasColumnType("NVARCHAR(40)");
 
         builder.Property(e => e.LastName)
             .IsRequired()
@@ -38,11 +38,8 @@ public class EmployeeEntityTypeConfig : IEntityTypeConfiguration<Employee>
 
         builder.Property(e => e.State).HasColumnType("NVARCHAR(40)");
 
-        builder.Property(e => e.Title).HasColumnType("NVARCHAR(30)");
-
-        builder.HasOne(d => d.ReportsToNavigation)
-            .WithMany(p => p.InverseReportsToNavigation)
-            .HasForeignKey(d => d.ReportsTo);
-
+        builder.HasOne(d => d.SupportRep)
+            .WithMany(p => p.Customers)
+            .HasForeignKey(d => d.SupportRepId);
     }
 }

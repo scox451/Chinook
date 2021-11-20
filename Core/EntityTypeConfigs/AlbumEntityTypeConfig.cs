@@ -6,12 +6,17 @@ public class AlbumEntityTypeConfig : IEntityTypeConfiguration<Album>
 {
     public void Configure(EntityTypeBuilder<Album> builder)
     {
-        builder.HasKey(e => e.AlbumId);
+        builder.ToTable("albums");
+
+        builder.HasIndex(e => e.ArtistId, "IFK_AlbumArtistId");
 
         builder.Property(e => e.Title)
+            .IsRequired()
             .HasColumnType("NVARCHAR(160)");
 
-        builder.Property(e => e.ArtistId)
-            .HasColumnType("INTEGER");
+        builder.HasOne(d => d.Artist)
+            .WithMany(p => p.Albums)
+            .HasForeignKey(d => d.ArtistId)
+            .OnDelete(DeleteBehavior.ClientSetNull);
     }
 }

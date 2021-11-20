@@ -6,10 +6,7 @@ public class ArtistEntityTypeConfig : IEntityTypeConfiguration<Artist>
 {
     public void Configure(EntityTypeBuilder<Artist> builder)
     {
-        builder.HasKey(e => e.ArtistId);
-
-        builder.Property(e => e.Name)
-            .HasColumnType("NVARCHAR(120)")
-            .IsRequired();
-   }
+        builder.ToTable("artists");
+        builder.Property(e => e.Name).HasColumnType("NVARCHAR(120)");
+    }
 }
