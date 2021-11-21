@@ -30,10 +30,11 @@
   <div class="search-results" [ngClass]="group.value">
     <ng-container *ngFor="let result of results">
       <div >
-        <img [src]="result.image" width="200" />
-        <div class="gutters">
-          <h5>{{result.title}}</h5>
-        </div>
+        <h5>{{result.Name}}</h5>
+        <h5>{{result.album.title}}</h5>
+        <h5>{{result.mediaType.name}}</h5>
+        <h5>{{result.genre.name}}</h5>
+        <h5>{{result.composer}}</h5>
       </div>
     </ng-container>
   </div>

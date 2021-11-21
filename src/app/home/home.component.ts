@@ -2,8 +2,8 @@ import { Component, Input } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
 
-import { ImdbAPIService } from '@services';
-import { SearchData, SearchResult } from '@models';
+import { TrackService } from '@services';
+import { Track } from '@models';
 
 @Component({
   selector: 'app-home',
@@ -15,28 +15,30 @@ export class HomeComponent {
   firstNameField: FormControl = new FormControl();
   lastNameField: FormControl;
 
-  results: SearchResult[];
+  results: Track[];
   displayMode:string ="";
 
-  constructor(private fb: FormBuilder, private imdbApiService: ImdbAPIService) {}
+  constructor(private fb: FormBuilder, private trackService: TrackService) {}
 
   ngOnInit(): void {
     this.initControls();
+    this.trackService.getTracks().subscribe((data:Track[]) => {
+         this.results = data;
+       });
+    // this,this.displayMode="list-results";
+    // this.firstNameField.valueChanges
+    //   .pipe(
+    //     distinctUntilChanged(),
+    //     debounceTime(500),
+    //     switchMap((filterText) => {
+    //       if (!filterText) return;
 
-    this,this.displayMode="list-results";
-    this.firstNameField.valueChanges
-      .pipe(
-        distinctUntilChanged(),
-        debounceTime(500),
-        switchMap((filterText) => {
-          if (!filterText) return;
-
-          return this.imdbApiService.search(filterText);
-        })
-      )
-      .subscribe((data:SearchData) => {
-        this.results = data.results;
-      });
+    //       return this.trackService.getTracks();
+    //     })
+    //   )
+    //   .subscribe((data:Track[]) => {
+    //     this.results = data;
+    //   });
 
     // this.imdbService.search("shawshank").subscribe(data=>{
     //   this.results = data.results;

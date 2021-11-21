@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "Chinook.Core/1.0.0": {
+      "chinook.core/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "5.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.0",
@@ -16,7 +16,7 @@
           "Microsoft.EntityFrameworkCore.Tools": "5.0.0"
         },
         "runtime": {
-          "Chinook.Core.dll": {}
+          "chinook.core.dll": {}
         }
       },
       "Humanizer.Core/2.8.26": {
@@ -331,7 +331,7 @@
     }
   },
   "libraries": {
-    "Chinook.Core/1.0.0": {
+    "chinook.core/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -3,12 +3,13 @@ import { NoPreloading, RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { SharedModule } from '@shared'
 import { AppRoutingModule } from './app-routing.module'
 
 import { AppComponent } from './app.component';
+import { CorsInterceptor } from './core/services/interceptors/corsInterceptor';
 
 // export function initUser(userService: UserService): () => any {
 //   return () => userService.getIdentity();
@@ -34,6 +35,9 @@ import { AppComponent } from './app.component';
 //   return () => bootstrapService.getEnvironmentName();
 
 @NgModule({
+  providers: [ 
+    { provide: HTTP_INTERCEPTORS, useClass: CorsInterceptor, multi: true },
+  ],
   imports: [ 
     BrowserModule, 
     BrowserAnimationsModule,

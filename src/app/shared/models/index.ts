@@ -1,4 +1,12 @@
-export { MostPopularData } from './mostPopularData';
-export { MostPopularDataDetail } from './mostPopularDataDetail';
-export { SearchData } from './searchData';
-export { SearchResult } from './searchResult';
+export { Album } from './album';
+export { Artist } from './artist';
+export { Customer } from './customer';
+export { Employee } from './employee';
+export { Genre } from './genre';
+export { Invoice } from './invoice';
+export { InvoiceItem } from './invoice_item';
+export { MediaType } from './media_type';
+export { Playlist } from './playlist';
+export { PlaylistTrack } from './playlist_track';
+export { Track } from './track';
+

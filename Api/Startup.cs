@@ -27,6 +27,20 @@ namespace chinook.api
         public void ConfigureServices(IServiceCollection services)
         {
 
+          
+
+            services.AddCors(options => options.AddPolicy("APIPolicy", builder =>
+            {
+                builder.WithOrigins("https://localhost:5000")
+                       .AllowAnyMethod()
+                       .AllowAnyHeader()
+                       .WithOrigins("localhost:4200");
+                builder.WithOrigins("https://localhost:5001")
+                       .AllowAnyMethod()
+                       .AllowAnyHeader()
+                       .WithOrigins("localhost:4200");
+            }));
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -52,6 +66,9 @@ namespace chinook.api
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors("APIPolicy");
+            
 
             app.UseEndpoints(endpoints =>
             {

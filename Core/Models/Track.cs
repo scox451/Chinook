@@ -21,8 +21,8 @@ namespace Chinook.Core.Models
         public long? GenreId { get; set; }
         public string Composer { get; set; }
         public long Milliseconds { get; set; }
-        public long? Bytes { get; set; }
-        public byte[] UnitPrice { get; set; }
+        public byte[] Bytes { get; set; }
+        public long? UnitPrice { get; set; }
 
         public virtual Album Album { get; set; }
         public virtual Genre Genre { get; set; }

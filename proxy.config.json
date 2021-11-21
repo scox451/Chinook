@@ -1,0 +1,12 @@
+{
+    "/chinook/*": {
+        "target": "https://localhost:5001",
+        "secure": false,
+        "logLevel": "info"
+    },
+	"/myotherapp/*": {
+        "target": "http://localhost:4500",
+        "secure": false,
+        "logLevel": "info"
+    }
+}
