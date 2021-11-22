@@ -6,7 +6,10 @@ export { Genre } from './genre';
 export { Invoice } from './invoice';
 export { InvoiceItem } from './invoice_item';
 export { MediaType } from './media_type';
+export { Pagination } from './pagination';
 export { Playlist } from './playlist';
 export { PlaylistTrack } from './playlist_track';
 export { Track } from './track';
+export { TrackDetails } from './track_details';
+export { TracksResult } from './tracks_result';
 

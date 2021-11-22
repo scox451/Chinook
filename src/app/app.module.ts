@@ -9,7 +9,7 @@ import { SharedModule } from '@shared'
 import { AppRoutingModule } from './app-routing.module'
 
 import { AppComponent } from './app.component';
-import { CorsInterceptor } from './core/services/interceptors/corsInterceptor';
+import { CorsInterceptor } from './core/interceptors/corsInterceptor';
 
 // export function initUser(userService: UserService): () => any {
 //   return () => userService.getIdentity();

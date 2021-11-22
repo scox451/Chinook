@@ -4,13 +4,24 @@ using Chinook.Core.Models;
 
 namespace Chinook.Core.Repos
 {
-    public class TrackRepo : BaseRepo
+    public class TracksRepo : BaseRepo
     {
-        public IEnumerable<Track> GetTracks()
+        public IEnumerable<Track> GetTracks(int limit=50, int offset=0)
         {
             using (var context = Context())
             {
-                var result = context.tracks.ToList();
+                var result = context.tracks.AsQueryable();
+                result = result.Skip(offset).Take(limit);
+
+                return result.ToList();
+            }
+        }
+
+        public Track Get(int id)
+        {
+             using (var context = Context())
+            {
+                var result = context.tracks.Where(x=>x.TrackId==id).SingleOrDefault();
                 return result;
             }
         }

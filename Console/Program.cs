@@ -12,7 +12,7 @@ namespace Chinook.ConsoleApp
         static void Main(string[] args)
         {
 
-           var result = new TrackRepo().GetTracks();
+           var result = new TracksRepo().GetTracks();
             
         }
     }

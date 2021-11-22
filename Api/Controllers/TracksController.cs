@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Chinook.Core.Models;
-using Chinook.Core.Repos;
 using Microsoft.AspNetCore.Authorization;
+using Chinook.Api.Models;
+using Microsoft.AspNetCore.Http;
+using System.Diagnostics;
+using Chinook.Api.Services;
 
 namespace chinook.api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
     [AllowAnonymous]
+    [Authorize]
     public class TracksController : ControllerBase
     {
         private readonly ILogger<TracksController> _logger;
@@ -22,9 +25,21 @@ namespace chinook.api.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Track> Get()
+        [Route("")]
+        public TracksResult Get([FromQuery] int? limit, [FromQuery] int? offset )
         {
-            var results = new TrackRepo().GetTracks();
+            Debug.WriteLineIf((limit != null), $"limit={limit}");
+            Debug.WriteLine($"QuryString={HttpContext.Request.QueryString.ToString()}");
+            
+            var results = new TracksService().GetTracks(limit,offset);
+            return results;
+        }
+
+        [HttpGet]
+        [Route("api/tracks/{id}")]
+        public TrackDetails Get(int id)
+        {
+            var results = new TracksService().Get(id);
             return results;
         }
     }
