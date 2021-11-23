@@ -1,10 +1,7 @@
 # LIBRETTO
 
-
-
 ## Purpose
 Developed as a sandbox to maintain knowledge on technologies including development tools, apis,languages, technologies etc.
-
 
 ## Technologies
 
@@ -26,10 +23,10 @@ Developed as a sandbox to maintain knowledge on technologies including developme
 + SQLite db
 + Azure Web API Services and SQL database
 
-## Roadmap
-
 ## Features
+_Release 1 under development_
 
+## Roadmap
 #### Release 1
 ##### Features:
 * Veiw all track details with pagination
