@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Chinook.Core.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Chinook.Core.Repos
 {
@@ -10,8 +11,14 @@ namespace Chinook.Core.Repos
         {
             using (var context = Context())
             {
-                var result = context.tracks.AsQueryable();
-                result = result.Skip(offset).Take(limit);
+                var result = context.tracks
+                    .Include(i=>i.Album)
+                    .Include(i=>i.MediaType)
+                    .Include(i=>i.Genre)
+                    .AsQueryable();
+
+                result = result.Skip(offset)
+                .Take(limit);
 
                 return result.ToList();
             }

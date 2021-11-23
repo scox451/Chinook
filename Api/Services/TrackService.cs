@@ -10,7 +10,7 @@ namespace Chinook.Api.Services
     public class TracksService
     {
         private readonly int defaultLimit = 50;
-        readonly int defaultOffset = 0;
+        private readonly int defaultOffset = 0;
 
         public TracksResult GetTracks(int? limit = null, int? offset = null)
         {

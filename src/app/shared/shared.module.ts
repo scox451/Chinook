@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 //import { NgSelectModule } from '@ng-select/ng-select';
-//import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 //import { NgPipesModule } from 'ngx-pipes';
 //import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 //import { DollarComponent } from './components/dollar/dollar.component';
@@ -27,7 +27,7 @@ const sharedModules = [
   FormsModule,
   ReactiveFormsModule,
  // NgSelectModule,
- // NgxDatatableModule
+  NgxDatatableModule
 ];
 
 // componentItems are going to be available for all modules that import SharedModule

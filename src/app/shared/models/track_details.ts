@@ -5,8 +5,8 @@ export interface TrackDetails
 	 name: string,
 	 albumTitle: string,
 	 albumResource: string,
-	 mediaTypeName: number,
-	 genreName: number,
+	 mediaTypeName: string,
+	 genreName: string,
 	 composer: string
 
 }

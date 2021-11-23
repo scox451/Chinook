@@ -1,32 +1,4 @@
-<form [formGroup]="searchForm">
-  <div class=row>
-    <div class="spacer"></div>
-    <mat-form-field>
-      <input matInput name="firstName" type="text" formControlName="SearchField" placeholder="Search" />
-    </mat-form-field>
-    <div class="spacer"></div>
-  </div>
-
-</form>
-<!-- <div class="actions">
-  <button mat-stroked-button (click)="clear()">
-    Clear
-  </button>
-  <button mat-raised-button color="primary" (click)="search()" cdkFocusInitial>
-    Search
-  </button>
-</div> -->
-<div class="row-center-content">
-  <div class="search-results">
-    <ng-container *ngFor="let result of results">
-      <div >
-        <h5>{{result.name}}</h5>
-        <h5>{{result.albumTitle}}</h5>
-        <h5>{{result.albumResource}}</h5>
-        <h5>{{result.mediaTypeName}}</h5>
-        <h5>{{result.genreName}}</h5>
-        <h5>{{result.composer}}</h5>
-      </div>
-    </ng-container>
-  </div>
+<div class="row">
+  <ngx-datatable class="material"
+   [rows]="tracks" [columns]="columns"></ngx-datatable>
 </div>

@@ -1,5 +1,8 @@
 /* Add application styles & imports to this file! */
 @import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import '~@swimlane/ngx-datatable/index.css';
+@import '~@swimlane/ngx-datatable/themes/material.scss';
+@import '~@swimlane/ngx-datatable/assets/icons.css';
 
 body {
   margin: 0;
@@ -17,7 +20,7 @@ body {
 .row {
   display: flex;
 
-  .mat-form-field {
+  .mat-form-field, .ngx-datatable{
     // margin: .25em;
     // border: 2px 2px 2px 2px;
     // border-color: black;

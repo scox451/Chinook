@@ -16,10 +16,10 @@ public static class ServiceExtensions
             {
                 TrackId = track.TrackId,
                 Name = track.Name,
-              //  AlbumTitle = track.Album.Title,
+                AlbumTitle = track.Album.Title,
                 AlbumResource = $"api/Albums/{track.AlbumId.ToString()}",
-             //   MediaTypeName = track.MediaType.Name,
-             //   GenreName = track.Genre.Name,
+                MediaTypeName = track.MediaType.Name,
+                GenreName = track.Genre.Name,
                 Composer = track.Composer
             });
 
