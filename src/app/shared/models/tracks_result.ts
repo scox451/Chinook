@@ -1,8 +1,8 @@
-import { Pagination, TrackDetails } from "@models";
+import { Page, TrackDetails } from "@models";
 
 export interface TracksResult
 {
 	 data: TrackDetails[],
-	 pagination: Pagination
+	 page: Page
 
 }

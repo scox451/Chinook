@@ -20,11 +20,12 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --configuration development",
     "build": "ng build",
+    "servedebug": "ng serve --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e"  
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.0.3",

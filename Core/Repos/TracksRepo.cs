@@ -20,7 +20,7 @@ namespace Chinook.Core.Repos
                     .AsQueryable();
                     
                 page.Count = query.Count();
-                query = query.Skip(page.Offset)
+                query = query.OrderBy(i=>i.TrackId).Skip(page.Offset)
                 .Take(page.Limit);
 
                 var result = query.ToList();
