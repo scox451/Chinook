@@ -7,7 +7,7 @@ namespace Chinook.Api.Models
     {
         public IEnumerable<TrackDetails> Data { get; set; }
 
-        public Pagination Pagination {get;set;}
+        public Page Page {get;set;}
 
     }
 

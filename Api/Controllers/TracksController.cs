@@ -26,9 +26,9 @@ namespace chinook.api.Controllers
 
         [HttpGet]
         [Route("")]
-        public TracksResult Get([FromQuery] int? limit, [FromQuery] int? offset )
+        public TracksResult Get([FromQuery] int limit, [FromQuery] int offset )
         {
-            Debug.WriteLineIf((limit != null), $"limit={limit}");
+            Debug.WriteLine($"limit={limit}");
             Debug.WriteLine($"QuryString={HttpContext.Request.QueryString.ToString()}");
             
             var results = new TracksService().GetTracks(limit,offset);

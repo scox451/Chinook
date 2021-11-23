@@ -7,20 +7,24 @@ namespace Chinook.Core.Repos
 {
     public class TracksRepo : BaseRepo
     {
-        public IEnumerable<Track> GetTracks(int limit=50, int offset=0)
+        public IEnumerable<Track> GetTracks(Page page = null)
         {
+            page = page ?? new Page();
+
             using (var context = Context())
             {
-                var result = context.tracks
+                var query = context.tracks
                     .Include(i=>i.Album)
                     .Include(i=>i.MediaType)
                     .Include(i=>i.Genre)
                     .AsQueryable();
+                    
+                page.Count = query.Count();
+                query = query.Skip(page.Offset)
+                .Take(page.Limit);
 
-                result = result.Skip(offset)
-                .Take(limit);
-
-                return result.ToList();
+                var result = query.ToList();
+                return result; 
             }
         }
 
