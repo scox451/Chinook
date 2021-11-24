@@ -4,10 +4,11 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Authorization;
-using Chinook.Api.Models;
+using Chinook.Api.Resources;
 using Microsoft.AspNetCore.Http;
 using System.Diagnostics;
 using Chinook.Api.Services;
+using Chinook.Core.Models;
 
 namespace chinook.api.Controllers
 {
@@ -26,12 +27,11 @@ namespace chinook.api.Controllers
 
         [HttpGet]
         [Route("")]
-        public TracksResult Get([FromQuery] int limit, [FromQuery] int offset )
+        public TracksResult Get([FromQuery] Page page  )
         {
-            Debug.WriteLine($"limit={limit}");
             Debug.WriteLine($"QuryString={HttpContext.Request.QueryString.ToString()}");
             
-            var results = new TracksService().GetTracks(limit,offset);
+            var results = new TracksService().GetTracks(page);
             return results;
         }
 

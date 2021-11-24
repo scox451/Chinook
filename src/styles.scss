@@ -1,11 +1,15 @@
-/* Add application styles & imports to this file! */
-@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+//@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import '~@swimlane/ngx-datatable/index.css';
 @import '~@swimlane/ngx-datatable/themes/material.scss';
 @import '~@swimlane/ngx-datatable/assets/icons.css';
 
+
+
 body {
   margin: 0;
+  font-family: 'Coda', cursive;
+  font-family: 'MuseoModerno', cursive;
+  font-family: 'Share', cursive;
 }
 
 .actions {
@@ -42,4 +46,11 @@ body {
   flex: 1 ;
   padding: 0em 0.5em;
   width: 100%;
+}
+
+.mat-button{
+  font-family: "Coda";
+  font-size: 14px;
+  line-height: 32px;
+  font-weight: 300;
 }

@@ -1,0 +1,64 @@
+<button mat-button>Basic</button>
+<button mat-button color="primary">Primary</button>
+<button mat-button color="accent">Accent</button>
+<button mat-button color="warn">Warn</button>
+<button mat-button disabled>Disabled</button>
+<form class="example-form">
+
+  <div class="row">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Favorite food</mat-label>
+      <input matInput placeholder="Ex. Pizza" value="Sushi">
+    </mat-form-field>
+  </div>
+  <div class="row">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Leave a comment</mat-label>
+      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+    </mat-form-field>
+  </div>
+  <div class="row">
+    <mat-checkbox class="example-margin" color="primary">
+      primary
+    </mat-checkbox>
+  </div>
+  <div class="row">
+    <mat-checkbox class="example-margin" color="accent">
+      accent
+    </mat-checkbox>
+  </div>
+  <div class="row">
+    <mat-form-field appearance="fill">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div class="row">
+    <mat-radio-group aria-label="Select an option">
+      <mat-radio-button value="1">Option 1</mat-radio-button>
+      <mat-radio-button value="2">Option 2</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div class="row">
+    <mat-form-field appearance="fill">
+      <mat-label>Favorite food</mat-label>
+      <mat-select>
+        <mat-option [value]="1">
+          Default
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="row"></div>
+
+
+</form>
+
+
+<div class="row">
+  <ngx-datatable class="dark" [rows]="tracks" [columns]="columns" [columnMode]="ColumnMode.force"
+    [headerHeight]="50" [footerHeight]="50" rowHeight="auto" [externalPaging]="true" [count]="page.count"
+    [offset]="page.offset" [limit]="page.limit" (page)="setPage($event)"></ngx-datatable>
+</div>

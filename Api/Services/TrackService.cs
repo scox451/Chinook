@@ -1,5 +1,5 @@
 using System.Linq;
-using Chinook.Api.Models;
+using Chinook.Api.Resources;
 using Chinook.Core.Models;
 using Chinook.Core.Repos;
 
@@ -9,9 +9,8 @@ namespace Chinook.Api.Services
 
     public class TracksService
     {
-        public TracksResult GetTracks(int limit, int offset)
+        public TracksResult GetTracks(Page page)
         {
-            var page = new Page(limit, offset);
             var data = new TracksRepo().GetTracks(page)
                                 .Select(i => i.ToTrackDetails());
             

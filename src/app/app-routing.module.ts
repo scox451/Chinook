@@ -6,16 +6,16 @@ import { NoPreloading, RouterModule, Routes } from '@angular/router';
 // import { RoleType } from '@shared/models/role-type';
 
 const routes: Routes = [
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: 'home',
-        loadChildren: () => import('./home/home.module').then((m) => m.HomeModule)//,
+    { path: '', redirectTo: 'tracks', pathMatch: 'full' },
+    { path: 'tracks',
+        loadChildren: () => import('./tracks/tracks.module').then((m) => m.TracksModule)//,
         //canActivate: [UserPermissionGuard],
         //data: {
         //    breadcrumb: { label: 'Users' },
         //    roles: `${RoleType.Admin}` }
     },  {
     path: '**',
-      redirectTo: '/home'
+      redirectTo: '/tracks'
   }
 ];
 

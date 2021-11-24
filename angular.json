@@ -23,6 +23,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/eggplant-theme.scss",
               "src/styles.scss"
             ],
             "scripts": []

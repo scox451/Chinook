@@ -14,25 +14,30 @@ namespace Chinook.Core.Repos
             using (var context = Context())
             {
                 var query = context.tracks
-                    .Include(i=>i.Album)
-                    .Include(i=>i.MediaType)
-                    .Include(i=>i.Genre)
+                    .Include(i => i.Album)
+                    .Include(i => i.MediaType)
+                    .Include(i => i.Genre)
                     .AsQueryable();
-                    
+
                 page.Count = query.Count();
-                query = query.OrderBy(i=>i.TrackId).Skip(page.Offset)
-                .Take(page.Limit);
+                query = query.OrderBy(i => i.TrackId);
+
+                if (page.Limit > 0)
+                    query = query
+                    .Skip(page.Offset)
+                    .Take(page.Limit);
 
                 var result = query.ToList();
-                return result; 
+
+                 return result;
             }
         }
 
         public Track Get(int id)
         {
-             using (var context = Context())
+            using (var context = Context())
             {
-                var result = context.tracks.Where(x=>x.TrackId==id).SingleOrDefault();
+                var result = context.tracks.Where(x => x.TrackId == id).SingleOrDefault();
                 return result;
             }
         }

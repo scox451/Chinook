@@ -4,10 +4,10 @@ namespace Chinook.Core.Models
 {
     public class Page
     {
-        private readonly int defaultLimit = 50;
+        private readonly int defaultLimit = 20;
         private readonly int defaultOffset = 0;
 
- public Page()
+        public Page()
         {
             Limit = defaultLimit;
             Offset = defaultOffset;
@@ -20,23 +20,25 @@ namespace Chinook.Core.Models
         public int Limit { get; set; }
         public int Offset { get; set; }
         public int Count { get; set; }
-        public int Previous => GetPrevious();
-        public int Next => GetNext();
-
-        private int GetPrevious()
+        public int Previous => Math.Max(Offset - Limit, defaultOffset);
+        public int Next => (Offset + Limit <= Count) ? 
+            Offset + Limit : 
+            defaultOffset;
+        public int PageIndex
         {
-            int newOffset = Offset - Limit;
-            return newOffset < 0 ? defaultOffset : newOffset;
-        }
+            get
+            {
+                if(Limit==0)
+                    return 0;
 
-        private int GetNext()
-        {
-            int newOffset = Offset + Limit;
+                var pageNumber = (int) Math.Floor((decimal)Offset/(decimal)Limit);
+                return Math.Max( pageNumber, 0);
+            }
 
-            if (newOffset > Count)
-                return defaultOffset;
-
-            return newOffset;
+            set
+            {
+                Offset = ((value + 1) * Limit) - Limit;
+            }
         }
     }
 

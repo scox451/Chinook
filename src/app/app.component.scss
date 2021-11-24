@@ -1,8 +1,16 @@
-p {
-  font-family: Lato;
+// p {
+//   font-family: "Coda";
+// }
+.mat-toolbar {
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 400;
+  font-family: "Coda";
+  letter-spacing: -0.05em;
+  color:#1b0f51;
 }
 
-.app-main-panel{
-padding: 8px;
+.app-main-panel {
+  padding: 8px;
 }
 
