@@ -2,14 +2,12 @@
 @import '~@swimlane/ngx-datatable/index.css';
 @import '~@swimlane/ngx-datatable/themes/material.scss';
 @import '~@swimlane/ngx-datatable/assets/icons.css';
+@import "./eggplant-palette.scss";
 
 
 
 body {
   margin: 0;
-  font-family: 'Coda', cursive;
-  font-family: 'MuseoModerno', cursive;
-  font-family: 'Share', cursive;
 }
 
 .actions {
@@ -24,7 +22,7 @@ body {
 .row {
   display: flex;
 
-  .mat-form-field, .ngx-datatable{
+  .mat-form-field, .ngx-datatable, .rowi{
     // margin: .25em;
     // border: 2px 2px 2px 2px;
     // border-color: black;
@@ -33,13 +31,31 @@ body {
   }
 }
 
-.row-center-content {
+.column-item,.coli{
+  flex-grow: 1;
+  margin: 1em;
+}
+
+.col-center-content, .colcc {
   display: flex;
+  flex-grow:1;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+
+}
+
+.fh{
+  height: 100%;
 }
 
 .spacer {
   flex: 1 1 auto;
+}
+
+.panel{
+ margin:  1em 1em 1em;
+ padding: 1.25em;
 }
 
 .gutters {
@@ -48,9 +64,3 @@ body {
   width: 100%;
 }
 
-.mat-button{
-  font-family: "Coda";
-  font-size: 14px;
-  line-height: 32px;
-  font-weight: 300;
-}

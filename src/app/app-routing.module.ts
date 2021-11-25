@@ -13,10 +13,18 @@ const routes: Routes = [
         //data: {
         //    breadcrumb: { label: 'Users' },
         //    roles: `${RoleType.Admin}` }
-    },  {
-    path: '**',
+    },  
+    { path: 'sign-in',
+        loadChildren: () => import('./sign-in/sign-in.module').then((m) => m.SignInModule)//,
+        //canActivate: [UserPermissionGuard],
+        //data: {
+        //    breadcrumb: { label: 'Users' },
+        //    roles: `${RoleType.Admin}` }
+    },  
+    {
+      path: '**',
       redirectTo: '/tracks'
-  }
+    }
 ];
 
 @NgModule({
