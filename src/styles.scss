@@ -3,11 +3,28 @@
 @import '~@swimlane/ngx-datatable/themes/material.scss';
 @import '~@swimlane/ngx-datatable/assets/icons.css';
 @import "./eggplant-palette.scss";
+@import '~@angular/material/theming';
+@import './eggplant-palette.scss';
+
+// Copy the palettes from your selected theme (usually theme.scss).
+$app-royal-purple-palette: mat-palette($mat-royal-purple);
+$app-pear-green-palette:  mat-palette($mat-pear-green);
+$app-warn-palette:    mat-palette($mat-bright-amber);
+
+// Create your Sass color vars (will be available in all the project)
+$primary: mat-color($app-royal-purple-palette, 900);
+$accent: mat-color($app-pear-green-palette);
+$warn: mat-color($app-warn-palette);
 
 
 
 body {
   margin: 0;
+}
+
+section.panel{
+      background-color: #3b3b3b;
+  
 }
 
 .actions {
@@ -62,5 +79,13 @@ body {
   flex: 1 ;
   padding: 0em 0.5em;
   width: 100%;
+}
+
+.script-lg{
+  font-family: "Share";
+  font-size: 24px;
+  font-weight: 300;
+
+  margin:1.25em;
 }
 

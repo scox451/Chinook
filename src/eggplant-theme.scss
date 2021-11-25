@@ -17,30 +17,94 @@ body {
 //\\ Topography
 //\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
 $eggplant-typography-config: mat.define-typography-config(
-    $font-family: "Coda, cursive",
-    $display-4: mat-typography-level(112px, 112px, 300, $letter-spacing: -0.05em),
-    $display-3: mat-typography-level(56px, 56px, 400, $letter-spacing: -0.02em),
-    $display-2: mat-typography-level(45px, 48px, 400, $letter-spacing: -0.005em),
-    $display-1: mat-typography-level(34px, 40px, 400),
-    $headline: mat-typography-level(24px, 32px, 400),
-    $title: mat-typography-level(20px, 32px, 500),
-    $subheading-2: mat-typography-level(16px, 28px, 400),
-    $subheading-1: mat-typography-level(15px, 24px, 400),
-    $body-2: mat-typography-level(14px, 24px, 500),
-    $body-1: mat-typography-level(14px, 20px, 400),
-    $caption: mat-typography-level(12px, 20px, 400),
-    $button: mat-typography-level(14px, 14px, 500),
-    $input: mat-typography-level(inherit, 1.125, 400)
+    $font-family: 'Coda',
+    $display-4: mat.define-typography-level(
+        $font-size: 112px,
+        $line-height: 112px,
+        $font-weight: 300,
+        $font-family: "Coda",
+        $letter-spacing: -0.05em,
+    ),
+    $display-3: mat.define-typography-level(
+            $font-size: 56px,
+            $line-height: 56px,
+            $font-weight: 400,
+            $font-family: "Coda",
+            $letter-spacing: -0.02em,
+        ),
+    $display-2: mat.define-typography-level(
+            $font-size: 45px,
+            $line-height: 48px,
+            $font-weight: 400,
+            $font-family: "Coda",
+            $letter-spacing: -0.005em,
+        ),
+    $display-1: mat.define-typography-level(
+            $font-size: 38px,
+            $line-height: 40px,
+            $font-weight: 400,
+            $font-family: "Coda",
+        ),
+    $headline: mat.define-typography-level(
+            $font-size: 24px,
+            $line-height: 32px,
+            $font-weight: 400,
+            $font-family: "Share",
+        ),
+    $title: mat.define-typography-level(
+            $font-size: 20px,
+            $line-height: 32px,
+            $font-weight: 500,
+            $font-family: "Share",
+        ),
+    $subheading-2: mat.define-typography-level(
+            $font-size: 16px,
+            $line-height: 28px,
+            $font-weight: 400,
+            $font-family: "Share",
+        ),
+    $subheading-1: mat.define-typography-level(
+            $font-size: 15px,
+            $line-height: 24px,
+            $font-weight: 400,
+            $font-family: "Share",
+        ),
+    $body-1: mat.define-typography-level(
+            $font-size: 14px,
+            $line-height: 20px,
+            $font-weight: 400,
+            $font-family: "MuseoModerno",
+        ),
+    $body-2: mat.define-typography-level(
+            $font-size: 14px,
+            $line-height: 24px,
+            $font-weight: 500,
+            $font-family: "MuseoModerno",
+        ),
+    $caption: mat.define-typography-level(
+            $font-size: 12px,
+            $line-height: 20px,
+            $font-weight: 400,
+            $font-family: "MuseoModerno",
+        ),
+    $button: mat.define-typography-level(
+            $font-size: 14px,
+            $line-height: 14px,
+            $font-weight: 500,
+            $font-family: "Coda",
+        ),  
+    $input: mat-typography-level(inherit, 1.125, 400),
 );
 
 @include mat.core( $eggplant-typography-config);
+@include mat-toolbar-typography($eggplant-typography-config);
 
 $eggplant-light-theme: mat.define-light-theme(
     (
         color: (
-            primary: mat.define-palette($eggplant-primary-palette, 500),
-            accent: mat.define-palette($eggplant-accent-palette, 200, 100, 400),
-            warn: mat.define-palette($eggplant-warn-palette, 500),
+            primary: mat.define-palette($mat-royal-purple, 500),
+            accent: mat.define-palette($mat-pear-green, 200, 100, 400),
+            warn: mat.define-palette($mat-bright-amber, 500),
         ),
 
     )
@@ -49,15 +113,17 @@ $eggplant-light-theme: mat.define-light-theme(
 $eggplant-dark-theme: mat.define-dark-theme(
     (
         color: (
-            primary: mat.define-palette($eggplant-accent-palette, 500),
-            accent: mat.define-palette($eggplant-primary-palette, A200, A100, A400),
-            warn: mat.define-palette($eggplant-warn-palette, 500),
+            primary: mat.define-palette($mat-deep-purple, 900),
+            accent: mat.define-palette($mat-royal-purple, A200, A100, A400),
+            warn: mat.define-palette($mat-bright-amber, 500),
         ),
 
     )
 );
 
 @include mat.all-component-colors($eggplant-light-theme);
+
+
 
 // Emit theme-dependent styles for common features used across multiple components.
 //@include mat.core-theme($eggplant-dark-theme);
