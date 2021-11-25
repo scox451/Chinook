@@ -6,7 +6,7 @@ import { NoPreloading, RouterModule, Routes } from '@angular/router';
 // import { RoleType } from '@shared/models/role-type';
 
 const routes: Routes = [
-    { path: '', redirectTo: 'tracks', pathMatch: 'full' },
+    { path: '', redirectTo: 'sign-in', pathMatch: 'full' },
     { path: 'tracks',
         loadChildren: () => import('./tracks/tracks.module').then((m) => m.TracksModule)//,
         //canActivate: [UserPermissionGuard],
@@ -14,16 +14,21 @@ const routes: Routes = [
         //    breadcrumb: { label: 'Users' },
         //    roles: `${RoleType.Admin}` }
     },  
-    { path: 'sign-in',
-        loadChildren: () => import('./sign-in/sign-in.module').then((m) => m.SignInModule)//,
-        //canActivate: [UserPermissionGuard],
-        //data: {
-        //    breadcrumb: { label: 'Users' },
-        //    roles: `${RoleType.Admin}` }
+    { 
+      path: 'sign-in',
+      loadChildren: () => import('./sign-in/sign-in.module').then((m) => m.SignInModule)//,
+    },  
+    { 
+      path: 'home',
+      loadChildren: () => import('./home/home.module').then((m) => m.HomeModule)//,
+    },  
+    { 
+      path: 'playlists',
+      loadChildren: () => import('./playlist/playlist.module').then((m) => m.PlaylistModule)//,
     },  
     {
       path: '**',
-      redirectTo: '/tracks'
+      redirectTo: '/playlists'
     }
 ];
 
