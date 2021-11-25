@@ -1,13 +1,21 @@
 @use "@angular/material" as mat;
+
 @import "~@angular/material/theming";
 @import "./eggplant-palette.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Coda:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@100;200;300;400;500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
 @include mat.core();
 
 body {
     font-family: 'Coda', cursive;
-    font-family: 'MuseoModerno', cursive;
-    font-family: 'Share',cursive;
+    font-family: 'Courgette', cursive;
+    font-family: 'Eagle Lake', cursive;
+    font-family: 'Bree Serif', serif;
   }
 // $custom-typography: mat-typography-config(
 //   $font-family: 'MuseoModerno'
@@ -17,75 +25,75 @@ body {
 //\\ Topography
 //\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
 $eggplant-typography-config: mat.define-typography-config(
-    $font-family: 'Coda',
+    $font-family: 'Bree Serif',
     $display-4: mat.define-typography-level(
         $font-size: 112px,
         $line-height: 112px,
         $font-weight: 300,
-        $font-family: "Coda",
+        $font-family: "Bree Serif",
         $letter-spacing: -0.05em,
     ),
     $display-3: mat.define-typography-level(
             $font-size: 56px,
             $line-height: 56px,
             $font-weight: 400,
-            $font-family: "Coda",
+            $font-family: "Bree Serif",
             $letter-spacing: -0.02em,
         ),
     $display-2: mat.define-typography-level(
             $font-size: 45px,
             $line-height: 48px,
             $font-weight: 400,
-            $font-family: "Coda",
+            $font-family: "Bree Serif",
             $letter-spacing: -0.005em,
         ),
     $display-1: mat.define-typography-level(
             $font-size: 38px,
             $line-height: 40px,
             $font-weight: 400,
-            $font-family: "Coda",
+            $font-family: "Bree Serif",
         ),
     $headline: mat.define-typography-level(
             $font-size: 24px,
             $line-height: 32px,
             $font-weight: 400,
-            $font-family: "Share",
+            $font-family: "Bree Serif",
         ),
     $title: mat.define-typography-level(
             $font-size: 20px,
             $line-height: 32px,
             $font-weight: 500,
-            $font-family: "Share",
+            $font-family: "Bree Serif",
         ),
     $subheading-2: mat.define-typography-level(
             $font-size: 16px,
             $line-height: 28px,
             $font-weight: 400,
-            $font-family: "Share",
+            $font-family: "Bree Serif",
         ),
     $subheading-1: mat.define-typography-level(
             $font-size: 15px,
             $line-height: 24px,
             $font-weight: 400,
-            $font-family: "Share",
+            $font-family: "Bree Serif",
         ),
     $body-1: mat.define-typography-level(
             $font-size: 14px,
             $line-height: 20px,
             $font-weight: 400,
-            $font-family: "MuseoModerno",
+            $font-family: "Courgette",
         ),
     $body-2: mat.define-typography-level(
             $font-size: 14px,
             $line-height: 24px,
             $font-weight: 500,
-            $font-family: "MuseoModerno",
+            $font-family: "Courgette",
         ),
     $caption: mat.define-typography-level(
             $font-size: 12px,
             $line-height: 20px,
             $font-weight: 400,
-            $font-family: "MuseoModerno",
+            $font-family: "Courgette",
         ),
     $button: mat.define-typography-level(
             $font-size: 14px,
@@ -113,9 +121,10 @@ $eggplant-light-theme: mat.define-light-theme(
 $eggplant-dark-theme: mat.define-dark-theme(
     (
         color: (
-            primary: mat.define-palette($mat-deep-purple, 900),
-            accent: mat.define-palette($mat-royal-purple, A200, A100, A400),
+            primary: mat.define-palette($mat-deep-purple, A400),
+            accent: mat.define-palette($mat-pear-green, 200, 100, 400),
             warn: mat.define-palette($mat-bright-amber, 500),
+            
         ),
 
     )
