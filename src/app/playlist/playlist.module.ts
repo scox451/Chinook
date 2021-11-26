@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { PlaylistRoutingModule } from './playlist-routing.module';
 import { PlaylistComponent } from './playlist.component';
+import { PlaylistDetailComponent } from './playlist-detail/playlist-detail.component';
 
 import { SharedModule } from '@shared';
 
 @NgModule({
   declarations: [
-    PlaylistComponent
+    PlaylistComponent,
+    PlaylistDetailComponent
   ],
   imports: [
     CommonModule,

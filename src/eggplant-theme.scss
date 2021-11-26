@@ -4,19 +4,18 @@
 @import "./eggplant-palette.scss";
 
 @import url('https://fonts.googleapis.com/css2?family=Coda:wght@400;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@100;200;300;400;500;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Corben:wght@400;700&display=swap');
 
 @include mat.core();
 
 body {
     font-family: 'Coda', cursive;
-    font-family: 'Courgette', cursive;
-    font-family: 'Eagle Lake', cursive;
-    font-family: 'Bree Serif', serif;
-  }
+    font-family: 'Comfortaa', cursive;
+    font-family: 'Corben', cursive;
+
+
+}
 // $custom-typography: mat-typography-config(
 //   $font-family: 'MuseoModerno'
 // );
@@ -25,75 +24,75 @@ body {
 //\\ Topography
 //\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
 $eggplant-typography-config: mat.define-typography-config(
-    $font-family: 'Bree Serif',
+    $font-family: 'Comfortaa',
     $display-4: mat.define-typography-level(
         $font-size: 112px,
         $line-height: 112px,
         $font-weight: 300,
-        $font-family: "Bree Serif",
+        $font-family: "Coda",
         $letter-spacing: -0.05em,
     ),
     $display-3: mat.define-typography-level(
             $font-size: 56px,
             $line-height: 56px,
             $font-weight: 400,
-            $font-family: "Bree Serif",
+            $font-family: "Coda",
             $letter-spacing: -0.02em,
         ),
     $display-2: mat.define-typography-level(
             $font-size: 45px,
             $line-height: 48px,
             $font-weight: 400,
-            $font-family: "Bree Serif",
+            $font-family: "Coda",
             $letter-spacing: -0.005em,
         ),
     $display-1: mat.define-typography-level(
             $font-size: 38px,
             $line-height: 40px,
             $font-weight: 400,
-            $font-family: "Bree Serif",
+            $font-family: "Coda",
         ),
     $headline: mat.define-typography-level(
             $font-size: 24px,
             $line-height: 32px,
             $font-weight: 400,
-            $font-family: "Bree Serif",
+            $font-family: "Coda",
         ),
     $title: mat.define-typography-level(
             $font-size: 20px,
             $line-height: 32px,
             $font-weight: 500,
-            $font-family: "Bree Serif",
+            $font-family: "Coda",
         ),
     $subheading-2: mat.define-typography-level(
             $font-size: 16px,
             $line-height: 28px,
             $font-weight: 400,
-            $font-family: "Bree Serif",
+            $font-family: "Coda",
         ),
     $subheading-1: mat.define-typography-level(
             $font-size: 15px,
             $line-height: 24px,
             $font-weight: 400,
-            $font-family: "Bree Serif",
+            $font-family: "Coda",
         ),
     $body-1: mat.define-typography-level(
             $font-size: 14px,
             $line-height: 20px,
             $font-weight: 400,
-            $font-family: "Courgette",
+            $font-family: "Corben",
         ),
     $body-2: mat.define-typography-level(
             $font-size: 14px,
             $line-height: 24px,
             $font-weight: 500,
-            $font-family: "Courgette",
+            $font-family: "Corben",
         ),
     $caption: mat.define-typography-level(
             $font-size: 12px,
             $line-height: 20px,
             $font-weight: 400,
-            $font-family: "Courgette",
+            $font-family: "Corben ",
         ),
     $button: mat.define-typography-level(
             $font-size: 14px,

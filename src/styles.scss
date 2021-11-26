@@ -22,9 +22,16 @@ body {
   margin: 0;
 }
 
-section.panel{
-      background-color: #3b3b3b;
-  
+article{
+  display:flex;
+
+  section, aside {
+    flex-grow: 1;
+    
+    .spacer {
+      flex: 1 1 auto;
+    }
+  }
 }
 
 .actions {
@@ -39,12 +46,9 @@ section.panel{
 .row {
   display: flex;
 
-  .mat-form-field, .ngx-datatable, .rowi{
-    // margin: .25em;
-    // border: 2px 2px 2px 2px;
-    // border-color: black;
-    // border-style: solid;
+  >div {
     flex-grow: 1;
+    margin: 0.5em;
   }
 }
 
@@ -53,13 +57,18 @@ section.panel{
   margin: 1em;
 }
 
-.col-center-content, .colcc {
+.stack {
   display: flex;
-  flex-grow:1;
   flex-direction: column;
+  .center{
   justify-content: center;
   align-items: center;
+  }
 
+  >div {
+    flex-grow: 1;
+    margin: 0.5em;
+  }
 }
 
 .fh{
@@ -70,22 +79,31 @@ section.panel{
   flex: 1 1 auto;
 }
 
-.panel{
- margin:  1em 1em 1em;
- padding: 1.25em;
-}
-
 .gutters {
   flex: 1 ;
   padding: 0em 0.5em;
   width: 100%;
 }
 
-.script-lg{
-  font-family: "Share";
-  font-size: 24px;
-  font-weight: 300;
-
-  margin:1.25em;
+.panel{
+  background-color: #3b3b3b;
+border-radius: 0.5em;
 }
+
+
+
+.script-lg,.mat-dialog-content{
+  font-family: "Corben";
+  font-size: 18px;
+  font-weight: 50;
+
+  margin:0.75em;
+}
+
+.fullscreen-dialog {
+  max-width: 100% !important;
+}
+
+
+
 
