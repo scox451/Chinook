@@ -26,6 +26,10 @@ const routes: Routes = [
       path: 'playlists',
       loadChildren: () => import('./playlist/playlist.module').then((m) => m.PlaylistModule)//,
     },  
+    { 
+      path: 'mat-demo',
+      loadChildren: () => import('./material-demo/material-demo.module').then((m) => m.MaterialDemoModule)//,
+    },  
     {
       path: '**',
       redirectTo: '/playlists'

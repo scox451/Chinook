@@ -1,17 +1,37 @@
-<div class='dark-mode mat-typography app-frame mat-app-background'>
-    <mat-toolbar color="primary">
+<div [ngClass]="{'dark-mode': isDarkMode}" class='mat-typography app-frame mat-app-background'>
+<!-- //<div class='dark-mode mat-typography app-frame mat-app-background'> -->
+        <mat-toolbar color="primary">
         <!-- browse icons https://fonts.google.com/icons?selected=Material+Icons -->
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <button mat-icon-button class="toolbar-icon">
             <mat-icon>menu</mat-icon>
         </button>
         <span class='toobar-title'>Libretto
         </span>
 
         <span class="spacer"></span>
-    
+        <button mat-icon-button class="toolbar-icon">
+            <mat-icon>miscellaneous_services</mat-icon>
+        </button>
+        <button mat-icon-button 
+            class="toolbar-icon" 
+            *ngIf="!isDarkMode"
+            (click)="changeMode()" >
+            <mat-icon>dark_mode</mat-icon>
+        </button>
+        <button mat-icon-button 
+            class="toolbar-icon" 
+            *ngIf="isDarkMode"
+            (click)="changeMode()" >
+            <mat-icon>light_mode</mat-icon>
+        </button>
 
     </mat-toolbar>
-    <div class="app-main-panel">
-        <router-outlet></router-outlet>
-    </div>
+    <mat-sidenav-container class="example-container no-bullets">
+        <mat-sidenav opened mode="side" >
+           
+        </mat-sidenav>
+        <div class="app-main-panel">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-container>
 </div>

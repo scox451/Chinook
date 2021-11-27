@@ -1,0 +1,39 @@
+@import "~@angular/material/theming";
+
+
+@mixin sidenav-component-theme($config-or-theme) {
+  // retrieve variables from theme
+  // (all possible variables, use only what you really need)
+  $config: mat-get-color-config($config-or-theme);
+  $primary: map-get($config-or-theme, primary);
+  $accent: map-get($config-or-theme, accent);
+  $warn: map-get($config-or-theme, warn);
+  $foreground: map-get($config-or-theme, foreground);
+  $background: map-get($config-or-theme, background);
+
+  .mat-drawer {
+    $primary: map-get($config-or-theme, primary);
+    $accent: map-get($config-or-theme, accent);
+    $warn: map-get($config-or-theme, warn);
+    $background: map-get($config-or-theme, background);
+    $foreground: map-get($config-or-theme, foreground);
+  
+    // .mat-toolbar {
+    //   background: mat-color($background, app-bar);
+    //   color: mat-color($foreground, text);
+  
+    //   &.mat-primary {
+    //     @include _mat-toolbar-color($primary);
+    //   }
+  
+    //   &.mat-accent {
+    //     @include _mat-toolbar-color($accent);
+    //   }
+  
+    //   &.mat-warn {
+    //     @include _mat-toolbar-color($warn);
+    //   }
+  
+    // }
+  }
+}

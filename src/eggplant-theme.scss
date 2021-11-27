@@ -2,6 +2,7 @@
 
 @import "~@angular/material/theming";
 @import "./eggplant-palette.scss";
+@import "./custom-component-themes.scss";
 
 @import url('https://fonts.googleapis.com/css2?family=Coda:wght@400;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
@@ -106,18 +107,18 @@ $eggplant-typography-config: mat.define-typography-config(
 @include mat.core( $eggplant-typography-config);
 @include mat-toolbar-typography($eggplant-typography-config);
 
-$eggplant-light-theme: mat.define-light-theme(
+$light-theme: mat.define-light-theme(
     (
         color: (
-            primary: mat.define-palette($mat-royal-purple, 500),
-            accent: mat.define-palette($mat-pear-green, 200, 100, 400),
+            primary: mat.define-palette($mat-royal-purple, A100),
+            accent: mat.define-palette($mat-pear-green, 100, 50, 200),
             warn: mat.define-palette($mat-bright-amber, 500),
         ),
 
     )
 );
 
-$eggplant-dark-theme: mat.define-dark-theme(
+$dark-theme: mat.define-dark-theme(
     (
         color: (
             primary: mat.define-palette($mat-deep-purple, A400),
@@ -129,7 +130,21 @@ $eggplant-dark-theme: mat.define-dark-theme(
     )
 );
 
-@include mat.all-component-colors($eggplant-light-theme);
+// Apply the light theme by default
+@include mat.core-theme($light-theme);
+@include mat.all-component-themes($light-theme);
+
+// Apply the dark theme only when the `.dark-mode` CSS class is applied
+// to an ancestor element of the components (such as `body`).
+.dark-mode {
+    @include mat.core-color($dark-theme);
+    @include mat.all-component-colors($dark-theme);
+    @include angular-material-color($dark-theme);
+    //   @include custom-components-theme($eggplant-dark-theme); 
+   }
+   
+
+
 
 
 
@@ -141,6 +156,5 @@ $eggplant-dark-theme: mat.define-dark-theme(
 // emit any typography styles.
 //@include mat.button-theme($eggplant-dark-theme);
 
-.dark-mode {
-    @include mat.all-component-colors($eggplant-dark-theme);
-}
+
+

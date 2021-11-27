@@ -1,0 +1,8 @@
+
+@import "./app/shared/components/sidenav/sidenav.component.scss-theme.scss";
+@import "./app/shared/components/dialog/dialog.component.scss-theme.scss"; // ? Added
+
+@mixin custom-components-theme($theme) {
+  @include sidenav-component-theme($theme);
+  @include dialog-component-theme($theme); // ? Added
+}

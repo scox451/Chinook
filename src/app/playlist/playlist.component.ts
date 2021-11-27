@@ -32,9 +32,8 @@ export class PlaylistComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(PlaylistDetailComponent, {
-      width: '250px',
-      panelClass: 'fullscreen-dialog',
-      data: {mode: this.mode, model: this.model},
+     // width: '500px',
+     data: {mode: this.mode, model: this.model},
     });
 
     dialogRef.afterClosed().subscribe(result => {
