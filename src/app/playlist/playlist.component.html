@@ -1,6 +1,11 @@
-<p>playlist works!</p>
+<h2>Playlists</h2>
 <button mat-mini-fab color="accent" (click)='openDialog()'>
     <mat-icon>
         add
     </mat-icon>
 </button>
+<div class="row">
+    <ngx-datatable class="material dark" [rows]="playlists" [columns]="columns" [columnMode]="ColumnMode.force"
+      [headerHeight]="50" [footerHeight]="50" rowHeight="auto" [externalPaging]="true" [count]="page.count"
+      [offset]="page.offset" [limit]="page.limit" (page)="setPage($event)"></ngx-datatable>
+</div>

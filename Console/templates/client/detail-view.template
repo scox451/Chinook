@@ -1,0 +1,12 @@
+  <h2 mat-dialog-title>{{mode}} ~!detail-sentence!~</h2>
+  <mat-dialog-content>
+    <form class='~!detail-kebab!~-form'>
+     
+	 ~!input-markup!~
+	 
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button (click)='close()'>Cancel</button>
+    <button mat-button (click)='save()'>Save</button>
+  </mat-dialog-actions>

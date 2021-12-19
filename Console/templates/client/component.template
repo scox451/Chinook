@@ -1,0 +1,45 @@
+
+import {Component, OnInit, Inject} from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+
+import { ~!pascal!~ } from '@models'
+import { ~!detail-pascal!~Component } from './~!detail-kebab!~/~!detail-kebab!~.component';
+
+export interface ~!detail-pascal!~Data {
+  mode: string;
+  model:~!pascal!~;
+}
+
+/**
+ * @title Dialog Overview
+ */
+ @Component({
+  selector: 'app-~!kebab!~',
+  templateUrl: './~!kebab!~.component.html',
+  styleUrls: ['./~!kebab!~.component.scss']
+})
+export class ~!pascal!~Component implements OnInit {
+
+
+  mode: string;
+  model: ~!pascal!~;
+
+  constructor(public dialog: MatDialog ) {}
+
+  ngOnInit(): void {
+
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(~!detail-pascal!~Component, {
+     // width: '500px',
+     data: {mode: this.mode, model: this.model},
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.model = result;
+    });
+  }
+}
+

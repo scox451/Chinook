@@ -1,0 +1,18 @@
+import { Injectable } from '@angular/core'
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable, of } from 'rxjs'
+import { ~!detail-pascal!~, Page } from '@models';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class ~!pascal!~Service {
+
+  constructor(private http: HttpClient) { }
+
+  get~!plural-pascal!~(page:Page): Observable<~!pascal!~Detail> {
+        
+    return this.http.get<~!pascal!~Detail>(`https://localhost:5001/api/~!kebab!~/Get~!pascal!~`, { "params": page as any } );
+
+  }
+}

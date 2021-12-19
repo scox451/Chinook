@@ -1,0 +1,60 @@
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA,MatDialogContent,MatDialogActions } from '@angular/material/dialog';
+
+import { ~!pascal!~Service } from '@services'
+
+import { ~!pascal!~ } from '@models';
+import { ~!detail-pascal!~Data } from '../~!kebab!~.component';
+
+@Component({
+  selector: 'app-~!detail-kebab!~',
+  templateUrl: './~!detail-kebab!~.component.html',
+  styleUrls: ['./~!detail-kebab!~.component.scss']
+})
+export class ~!detail-pascal!~Component implements OnInit {
+  mode: string;
+  model:~!detail-pascal!~;
+  
+   ~!detail-camel!~Form: FormGroup;
+   ~!form-control-defs!~
+
+  constructor(
+    public dialogRef: MatDialogRef<~!detail-pascal!~Component>,
+    @Inject(MAT_DIALOG_DATA) public data: ~!detail-pascal!~Data,
+	
+  ) {
+    this.mode = data.mode;
+    this.model = data.model;
+
+  }
+
+  ngOnInit(): void {
+  
+  this.initControls();
+  this.mapControls();
+  
+  }
+  
+  initControls(){
+  ~!init-form-controls!~
+  }
+  
+  mapControls(){
+  ~!map-form-controls!~
+  }
+  
+  mapValues(){
+  ~!map-control-values!~
+  }
+  
+  close(): void {
+    this.dialogRef.close();
+  }
+  
+  save(): void {
+  
+    this.mapValues();
+  
+    this.dialogRef.close();
+  }
+}

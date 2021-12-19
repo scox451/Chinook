@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yYT4DlVdv9VcAWAyfJzcJx6rprEanXhfyoTVUEUn7qdhvDuqzdxeLeaMHJGf3Gc3RsUNf0nmDK9d3B8Vfr0tsA==",
+  "dgSpecHash": "a6+EhnPH3/IDhEGLEWxV9e4nBM/VpBf3Y6vymqXyRs6zpOBiDKiUkS4fF948DrbPHPfemh2JEsQuHBq+UdNMlw==",
   "success": true,
-  "projectFilePath": "C:\\projects\\Chinook\\api\\chinook.api.csproj",
+  "projectFilePath": "C:\\projects\\chinook\\api\\chinook.api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\stephen\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\stephen\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.0\\microsoft.aspnetcore.cryptography.internal.5.0.0.nupkg.sha512",
