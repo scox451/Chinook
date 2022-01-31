@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\core\chinook.core.csproj" />
+    <ProjectReference Include="..\Core\chinook.core.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

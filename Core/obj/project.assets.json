@@ -1298,19 +1298,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\stephen\\.nuget\\packages\\": {}
+    "/home/padrino556/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\projects\\Chinook\\core\\Chinook.Core.csproj",
-      "projectName": "Chinook.Core",
-      "projectPath": "C:\\projects\\Chinook\\core\\Chinook.Core.csproj",
-      "packagesPath": "C:\\Users\\stephen\\.nuget\\packages\\",
-      "outputPath": "C:\\projects\\Chinook\\core\\obj\\",
+      "projectUniqueName": "/home/padrino556/dev/Chinook/Core/chinook.core.csproj",
+      "projectName": "chinook.core",
+      "projectPath": "/home/padrino556/dev/Chinook/Core/chinook.core.csproj",
+      "packagesPath": "/home/padrino556/.nuget/packages/",
+      "outputPath": "/home/padrino556/dev/Chinook/Core/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\stephen\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/padrino556/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -1373,12 +1373,22 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
       }
     }
   }
